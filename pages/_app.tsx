@@ -1,10 +1,5 @@
 import 'tailwindcss/tailwind.css'
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  HttpLink,
-} from '@apollo/client'
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
 
 function MyApp({ Component, pageProps }) {
   const client = new ApolloClient({

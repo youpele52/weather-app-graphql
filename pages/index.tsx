@@ -89,7 +89,7 @@ export default function Home() {
           target='_blank'
           rel='noopener noreferrer'
         >
-          Created by <UserIcon className='h-7 ml-2 text-blue-500' />
+          Created by <UserIcon className='h-7 ml-2 hover:text-blue-500' />
         </a>
       </footer>
     </div>
