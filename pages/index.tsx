@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import { useLazyQuery } from '@apollo/client'
 import { getWeather } from '../graphql/queries'
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
+import { UserIcon } from '@heroicons/react/solid'
 
 export default function Home() {
-  const ref = useRef()
   const [cityName, setCityName] = useState('')
   const [cityWeatherInfo, setCityWeatherInfo] = useState(Object)
   const [getNewWeather, { loading, data, error }] = useLazyQuery(getWeather, {
@@ -18,14 +18,12 @@ export default function Home() {
       if (getCityByName) {
         setCityWeatherInfo(data.getCityByName)
       }
-      // console.log(getCityByName.country)
     }
   }, [data])
 
   console.log(cityWeatherInfo)
   const onChange = (e) => {
     setCityName(e.target.value)
-    // console.log(e.target.value)
   }
 
   return (
@@ -43,11 +41,11 @@ export default function Home() {
             name='city'
             onChange={onChange}
             value={cityName}
-            className='border-2 border-gray-500  text-center h-8 w-48 mb-2 mx-2 rounded-2xl'
+            className='border-2 border-gray-500  text-center h-8 w-64 mb-2 mx-2 rounded-2xl'
             placeholder='City name...'
           />
           <button
-            className='bg-yellow-500 h-8 w-20 hover:bg-green-500 rounded-2xl'
+            className='bg-blue-500 h-8 w-20 text-white font-bold hover:bg-green-600 rounded-2xl'
             onClick={() => {
               getNewWeather()
             }}
@@ -91,8 +89,7 @@ export default function Home() {
           target='_blank'
           rel='noopener noreferrer'
         >
-          Powered by{' '}
-          <img src='/vercel.svg' alt='Vercel Logo' className='h-4 ml-2' />
+          Created by <UserIcon className='h-7 ml-2 text-blue-500' />
         </a>
       </footer>
     </div>

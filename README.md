@@ -1,3 +1,3 @@
 # Weather App
 
-Weather app created with Next.js, GraphQL, TailwindCSS etc
+Weather app created with Next.js, TypeScript, GraphQL, TailwindCSS etc
